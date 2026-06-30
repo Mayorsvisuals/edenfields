@@ -249,6 +249,18 @@ export default function AdminDashboard() {
             ))}
           </div>
         );
+      case 'chatbot':
+        return (
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold border-b pb-2">Chatbot Responses</h3>
+            {data.chatbot.map((bot: any, idx: number) => (
+                <div key={idx} className="border p-4 rounded bg-gray-50 flex flex-col gap-2">
+                    <input className="w-full border p-2 rounded font-medium" value={bot.label} onChange={e => { const newB = [...data.chatbot]; newB[idx].label = e.target.value; setData({...data, chatbot: newB}); }} />
+                    <textarea className="w-full border p-2 rounded h-20" value={bot.response} onChange={e => { const newB = [...data.chatbot]; newB[idx].response = e.target.value; setData({...data, chatbot: newB}); }} />
+                </div>
+            ))}
+          </div>
+        );
       default:
         return <div>Select a tab</div>;
     }
@@ -262,7 +274,7 @@ export default function AdminDashboard() {
           <p className="text-sm text-[#D4AF37] opacity-80 mt-1">Edenfields Realty</p>
         </div>
         <nav className="flex-1 mt-6">
-          {['home', 'about', 'founder', 'properties', 'gallery', 'faqs', 'contact', 'leads'].map(tab => (
+          {['home', 'about', 'founder', 'properties', 'gallery', 'faqs', 'contact', 'leads', 'chatbot'].map(tab => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}

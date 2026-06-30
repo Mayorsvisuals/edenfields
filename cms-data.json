@@ -1,0 +1,213 @@
+{
+  "admin": {
+    "username": "admin",
+    "password": "eden2025",
+    "needsPasswordChange": true
+  },
+  "site": {
+    "logoUrl": "https://edenfieldsrealty.com/wp-content/uploads/2026/04/EDENFIELD-REALITY-LTD-copy22-300x300.jpg",
+    "logoText": "EDENFIELDS",
+    "logoSubtext": "REALTY LTD"
+  },
+  "home": {
+    "subtitle": "Premium Real Estate Investment",
+    "title": "Turning Lands Into Legacies",
+    "description": "Helping individuals and investors build generational wealth through strategic land ownership in fast-developing locations across Nigeria.",
+    "heroImages": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+    ]
+  },
+  "about": {
+    "imageUrl": "https://edenfieldsrealty.com/wp-content/uploads/2026/04/ed49ffc8-7206-4c35-bfe7-c0273602e8e3.jpg",
+    "experiencePercentage": "100%",
+    "experienceText": "Genuine\\nLands",
+    "title": "Who We Are",
+    "heading": "Building Wealth, Securing Futures.",
+    "paragraphs": [
+      "Edenfields Realty LTD is a premium real estate company dedicated to identifying fast-developing locations, securing genuine plots, and positioning our clients to benefit from massive future appreciation.",
+      "We understand that real estate is the most reliable path to generational wealth. That's why we meticulously vet every property, ensuring zero encumbrances and complete peace of mind for our investors."
+    ],
+    "mission": "To provide accessible, secure, and highly profitable real estate investments.",
+    "vision": "To be Africa's most trusted partner in strategic land acquisition and legacy building.",
+    "coreValues": "Integrity, Transparency, Excellence, and Client-Centricity."
+  },
+  "properties": [
+    {
+      "id": "1",
+      "title": "Eden Gardens Estate",
+      "location": "Elebu Axis, Ibadan, Oyo State",
+      "status": "Selling Fast",
+      "statusColor": "#B22222",
+      "price": "₦3.5M",
+      "unit": "/ Plot",
+      "imageUrl": "https://edenfieldsrealty.com/wp-content/uploads/2026/04/eca45e2c-c57e-404b-b04a-0efbc0c84b19-225x300.jpg",
+      "features": [
+        {
+          "icon": "fa-file-contract",
+          "label": "Reg. Survey"
+        },
+        {
+          "icon": "fa-vector-square",
+          "label": "500 SQM"
+        },
+        {
+          "icon": "fa-road",
+          "label": "Good Road"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Legacy City Annex",
+      "location": "Moniya-Iseyin Road, Ibadan",
+      "status": "New Launch",
+      "statusColor": "#0A3622",
+      "price": "₦1.2M",
+      "unit": "/ Plot",
+      "imageUrl": "https://images.unsplash.com/photo-1585128719715-46776b56a0fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "features": [
+        {
+          "icon": "fa-file-signature",
+          "label": "C of O in view"
+        },
+        {
+          "icon": "fa-vector-square",
+          "label": "600 SQM"
+        },
+        {
+          "icon": "fa-bolt",
+          "label": "Electricity"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Pinnacle Courts",
+      "location": "Akala Express, Ibadan",
+      "status": "Premium",
+      "statusColor": "#D4AF37",
+      "statusTextColor": "#1F2937",
+      "price": "₦5.0M",
+      "unit": "/ Plot",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "features": [
+        {
+          "icon": "fa-certificate",
+          "label": "Gov. Consent"
+        },
+        {
+          "icon": "fa-vector-square",
+          "label": "500 SQM"
+        },
+        {
+          "icon": "fa-shield-alt",
+          "label": "Secured Est."
+        }
+      ]
+    }
+  ],
+  "founder": {
+    "name": "Ayobami Odusote",
+    "title": "Chief Executive Officer & Founder",
+    "imageUrl": "https://edenfieldsrealty.com/wp-content/uploads/2026/06/eden-founder-scaled.jpg",
+    "bioParagraphs": [
+      "Ayobami Odusote is a dynamic real estate developer and visionary investment strategist dedicated to transforming the Nigerian real estate landscape. With a profound understanding of market dynamics and urbanization trends, Ayobami recognized the massive, untapped potential in strategic land banking.",
+      "Driven by a passion to democratize wealth creation, Ayobami founded Edenfields Realty LTD to bridge the gap between everyday individuals and high-yield property investments. Under his leadership, the company has grown into a trusted bastion of transparency, executing secure transactions that turn undeveloped lands into generational legacies."
+    ],
+    "quote": "\"Real estate is not just about buying dirt; it's about securing a piece of the future. At Edenfields, our mandate is simple: we do the hard work of sourcing genuine, high-potential lands, so our clients can simply invest, sleep, and watch their wealth multiply.\""
+  },
+  "gallery": [
+    {
+      "id": "1",
+      "url": "https://edenfieldsrealty.com/wp-content/uploads/2026/04/eca45e2c-c57e-404b-b04a-0efbc0c84b19-225x300.jpg",
+      "caption": "Site Inspection"
+    },
+    {
+      "id": "2",
+      "url": "https://edenfieldsrealty.com/wp-content/uploads/2026/04/ed49ffc8-7206-4c35-bfe7-c0273602e8e3.jpg",
+      "caption": "Estate Layout"
+    },
+    {
+      "id": "3",
+      "url": "https://edenfieldsrealty.com/wp-content/uploads/2026/04/eca45e2c-c57e-404b-b04a-0efbc0c84b19-225x300.jpg",
+      "caption": "Land Allocation"
+    },
+    {
+      "id": "4",
+      "url": "https://edenfieldsrealty.com/wp-content/uploads/2026/04/ed49ffc8-7206-4c35-bfe7-c0273602e8e3.jpg",
+      "caption": "Clearing Site"
+    },
+    {
+      "id": "5",
+      "url": "https://edenfieldsrealty.com/wp-content/uploads/2026/04/eca45e2c-c57e-404b-b04a-0efbc0c84b19-225x300.jpg",
+      "caption": "Happy Clients"
+    },
+    {
+      "id": "6",
+      "url": "https://edenfieldsrealty.com/wp-content/uploads/2026/04/ed49ffc8-7206-4c35-bfe7-c0273602e8e3.jpg",
+      "caption": "Estate Gatehouse Plan"
+    }
+  ],
+  "faqs": [
+    {
+      "id": "1",
+      "question": "Is the land genuine and free from Omo-Onile?",
+      "answer": "Yes, absolutely. All Edenfields properties are 100% free from government acquisition and Omo-onile interference. We conduct thorough due diligence, perimeter surveys, and secure all necessary documentation before putting any property on the market."
+    },
+    {
+      "id": "2",
+      "question": "Can I inspect the land physically before buying?",
+      "answer": "Yes! We highly encourage physical inspections. We offer free site inspections on specific days of the week. You can book an inspection via our website or send us a message on WhatsApp to schedule a convenient time."
+    },
+    {
+      "id": "3",
+      "question": "What documents are provided after payment?",
+      "answer": "Upon full payment, you will receive a Payment Receipt, Contract of Sales, and an Allocation Letter. Afterwards, processing of your Registered Survey and Deed of Assignment will commence based on the specific estate's terms."
+    },
+    {
+      "id": "4",
+      "question": "Are installment payment plans available?",
+      "answer": "Yes, we offer flexible payment plans designed to suit different budgets. Depending on the estate, you can spread your balance across 3, 6, or 12 months after an initial deposit."
+    },
+    {
+      "id": "5",
+      "question": "How secure is my investment with Edenfields?",
+      "answer": "Your investment is highly secure. We are a registered corporate entity in Nigeria (RC: 8943212). We prioritize transparency, legal compliance, and client satisfaction above all else. Our track record of successful allocations speaks for itself."
+    },
+    {
+      "id": "6",
+      "question": "How long does physical allocation take?",
+      "answer": "Physical allocation varies by estate but generally occurs within 30 to 90 days after complete payment for the land and statutory fees (Survey, Deed, and Development levy). We organize batch allocation events for our clients."
+    }
+  ],
+  "contact": {
+    "address": "32 Odo Ona Elewe Opposite St Apata Filling Station, Orita Challenge, Ibadan, Oyo State, Nigeria",
+    "phone": "0905 046 3859",
+    "phoneLink": "+2349050463859",
+    "email": "sales@edenfieldsrealty.com",
+    "facebookUrl": "https://www.facebook.com/share/1CT3DVekx5/",
+    "instagramUrl": "https://instagram.com/edenfields_realtyltd",
+    "whatsappUrl": "https://wa.me/2349050463859"
+  },
+  "chatbot": [
+    {
+      "label": "Available Lands",
+      "response": "We have premium, verified plots in fast-developing areas of Ibadan like Elebu, Moniya, and Akala Express. Would you like to see specific details?"
+    },
+    {
+      "label": "Pricing & Payments",
+      "response": "Our lands range from ₦1.2M to ₦5.0M per plot depending on location. We also offer flexible payment plans up to 12 months. Do you want to discuss a payment plan?"
+    },
+    {
+      "label": "Site Inspection",
+      "response": "We offer free physical site inspections. To schedule one, please connect with our representative on WhatsApp."
+    },
+    {
+      "label": "Documentation",
+      "response": "We provide secure titles including Registered Surveys, C of O (in view), and Government Consent depending on the estate. All our lands are free from Omo-Onile issues."
+    }
+  ],
+  "leads": []
+}

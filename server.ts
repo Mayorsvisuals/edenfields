@@ -136,7 +136,7 @@ const DEFAULT_DATA = {
     { id: "6", question: "How long does physical allocation take?", answer: "Physical allocation varies by estate but generally occurs within 30 to 90 days after complete payment for the land and statutory fees (Survey, Deed, and Development levy). We organize batch allocation events for our clients." }
   ],
   contact: {
-    address: "26, Akeredolu Street, Elebu,\\nIbadan, Oyo State, Nigeria.",
+    address: "32 Odo Ona Elewe Opposite St Apata Filling Station, Orita Challenge, Ibadan, Oyo State, Nigeria",
     phone: "0905 046 3859",
     phoneLink: "+2349050463859",
     email: "sales@edenfieldsrealty.com",
@@ -247,6 +247,18 @@ async function startServer() {
       appType: "spa",
     });
     app.use(vite.middlewares);
+    
+    app.use('*', async (req, res, next) => {
+      try {
+        const url = req.originalUrl;
+        let template = await fs.readFile(path.resolve('index.html'), 'utf-8');
+        template = await vite.transformIndexHtml(url, template);
+        res.status(200).set({ 'Content-Type': 'text/html' }).end(template);
+      } catch (e) {
+        vite.ssrFixStacktrace(e as Error);
+        next(e);
+      }
+    });
   } else {
     const distPath = path.join(process.cwd(), 'dist');
     app.use(express.static(distPath));
