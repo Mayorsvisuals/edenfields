@@ -39,7 +39,7 @@ export default function Properties() {
               className="bg-white rounded-[2rem] overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-500 group flex flex-col"
             >
               <div className="relative h-80 sm:h-96 overflow-hidden">
-                <div className="absolute top-6 left-6 z-10 bg-brand-accent/95 backdrop-blur-md px-6 py-2 rounded-full text-sm font-semibold text-white shadow-lg tracking-wider uppercase">
+                <div className="absolute top-6 left-6 z-10 bg-brand-accent/95 backdrop-blur-md px-5 py-2 rounded-full text-xs font-bold tracking-widest text-white shadow-lg uppercase">
                   {prop.status}
                 </div>
                 <img 
@@ -48,25 +48,23 @@ export default function Properties() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-in-out"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent opacity-60"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/50 via-transparent to-transparent opacity-60"></div>
                 
-                <div className="absolute bottom-6 right-6 z-10 bg-white/95 backdrop-blur-md px-6 py-3 rounded-2xl shadow-xl">
-                  <span className="block font-heading font-bold text-2xl text-brand-primary">{prop.price}</span>
-                  <span className="text-sm font-medium text-brand-muted">{prop.unit}</span>
+                <div className="absolute bottom-6 right-6 z-10 bg-white/95 backdrop-blur-md px-6 py-3 rounded-[1.5rem] shadow-xl">
+                  <span className="block font-heading font-bold text-3xl text-brand-primary">{prop.price}</span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-brand-muted">{prop.unit}</span>
                 </div>
               </div>
 
               <div className="p-8 sm:p-10 flex flex-col flex-grow">
                 <div className="flex items-center gap-3 text-brand-muted mb-4">
-                  <div className="w-10 h-10 rounded-full bg-brand-background flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-brand-secondary" />
-                  </div>
+                  <MapPin className="w-5 h-5 text-brand-secondary shrink-0" />
                   <span className="text-lg font-medium">{prop.location}</span>
                 </div>
                 
-                <h3 className="font-heading font-bold text-3xl text-brand-primary mb-8">{prop.title}</h3>
+                <h3 className="font-heading font-bold text-4xl text-brand-primary mb-8">{prop.title}</h3>
                 
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-10 pt-8 border-t border-gray-100">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mb-10 pt-8 border-t border-gray-100">
                   {prop.features.map((feat: any, fIdx: number) => {
                     // Match icons based on label
                     let Icon = Home;
@@ -74,20 +72,20 @@ export default function Properties() {
                     if (feat.label.toLowerCase().includes('title') || feat.label.toLowerCase().includes('document')) Icon = Shield;
                     
                     return (
-                      <div className="flex flex-col gap-2" key={fIdx}>
-                        <Icon className="w-6 h-6 text-brand-secondary" />
-                        <span className="text-sm font-medium text-brand-dark">{feat.label}</span>
+                      <div className="flex flex-col gap-3" key={fIdx}>
+                        <Icon className="w-7 h-7 text-brand-secondary" />
+                        <span className="text-sm font-medium text-brand-dark leading-snug">{feat.label}</span>
                       </div>
                     );
                   })}
                 </div>
                 
-                <div className="mt-auto pt-6">
+                <div className="mt-auto pt-8">
                   <a 
                     href={`${data.contact.whatsappUrl}?text=Hello EdenFields, I am interested in the ${prop.title} property.`}
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex items-center justify-center gap-3 w-full bg-brand-primary hover:bg-brand-primary/90 text-white font-semibold py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
+                    className="flex items-center justify-center gap-3 w-full bg-brand-primary hover:bg-white border-2 border-transparent hover:border-brand-primary text-white hover:text-brand-primary font-semibold py-5 rounded-xl transition-all duration-300 shadow-md hover:shadow-xl"
                   >
                     Request Brochure <ArrowRight className="w-5 h-5" />
                   </a>

@@ -25,77 +25,77 @@ export default function Contact() {
   return (
     <div className="font-sans text-brand-dark bg-brand-background pt-32 pb-24 min-h-screen">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-4xl mx-auto mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            <span className="text-brand-secondary font-semibold tracking-widest uppercase mb-4 block">Let's Talk</span>
-            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-brand-primary mb-6">
+            <span className="text-brand-secondary font-semibold tracking-widest uppercase mb-6 block">Let's Talk</span>
+            <h1 className="font-heading font-bold text-5xl md:text-6xl lg:text-7xl text-brand-primary mb-8 leading-tight">
               Get In Touch
             </h1>
-            <p className="text-brand-muted text-lg md:text-xl font-light">
+            <p className="text-brand-muted text-xl font-light leading-relaxed">
               Ready to secure your legacy? Our team of real estate experts is available to assist you with inquiries, inspections, and investments.
             </p>
           </motion.div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-20 items-start max-w-6xl mx-auto">
           {/* Contact Information */}
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white p-10 md:p-12 rounded-[2rem] shadow-xl border border-gray-100 relative overflow-hidden"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-white p-12 md:p-16 rounded-[2.5rem] shadow-2xl border border-gray-100 relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-background rounded-full translate-x-1/3 -translate-y-1/3 -z-10"></div>
+            <div className="absolute top-0 right-0 w-80 h-80 bg-brand-background rounded-full translate-x-1/3 -translate-y-1/3 -z-10"></div>
             
-            <h3 className="font-heading font-bold text-2xl text-brand-primary mb-10">Contact Information</h3>
+            <h3 className="font-heading font-bold text-3xl text-brand-primary mb-12">Contact Information</h3>
             
-            <div className="space-y-10">
-              <div className="flex gap-6 group">
-                <div className="w-14 h-14 rounded-2xl bg-brand-primary/5 text-brand-primary flex items-center justify-center shrink-0 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
-                  <MapPin className="w-6 h-6" />
+            <div className="space-y-12">
+              <div className="flex gap-8 group">
+                <div className="w-16 h-16 rounded-2xl bg-brand-background text-brand-secondary flex items-center justify-center shrink-0 shadow-inner group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
+                  <MapPin className="w-7 h-7" />
                 </div>
                 <div>
-                  <h4 className="font-heading font-semibold text-lg text-brand-dark mb-2">Office Address</h4>
-                  <p className="text-brand-muted leading-relaxed" dangerouslySetInnerHTML={{ __html: data.contact.address.replace('\\n', '<br/>').replace('\n', '<br/>') }}></p>
+                  <h4 className="font-heading font-semibold text-xl text-brand-dark mb-3">Office Address</h4>
+                  <p className="text-brand-muted text-lg leading-relaxed font-light" dangerouslySetInnerHTML={{ __html: data.contact.address.replace('\\n', '<br/>').replace('\n', '<br/>') }}></p>
                 </div>
               </div>
               
-              <div className="flex gap-6 group">
-                <div className="w-14 h-14 rounded-2xl bg-brand-primary/5 text-brand-primary flex items-center justify-center shrink-0 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
-                  <Phone className="w-6 h-6" />
+              <div className="flex gap-8 group">
+                <div className="w-16 h-16 rounded-2xl bg-brand-background text-brand-secondary flex items-center justify-center shrink-0 shadow-inner group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
+                  <Phone className="w-7 h-7" />
                 </div>
                 <div>
-                  <h4 className="font-heading font-semibold text-lg text-brand-dark mb-2">Call or WhatsApp</h4>
-                  <a href={`tel:${data.contact.phoneLink}`} className="text-brand-muted hover:text-brand-secondary transition-colors">{data.contact.phone}</a>
+                  <h4 className="font-heading font-semibold text-xl text-brand-dark mb-3">Call or WhatsApp</h4>
+                  <a href={`tel:${data.contact.phoneLink}`} className="text-brand-muted text-lg hover:text-brand-secondary transition-colors font-light">{data.contact.phone}</a>
                 </div>
               </div>
               
-              <div className="flex gap-6 group">
-                <div className="w-14 h-14 rounded-2xl bg-brand-primary/5 text-brand-primary flex items-center justify-center shrink-0 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
-                  <Mail className="w-6 h-6" />
+              <div className="flex gap-8 group">
+                <div className="w-16 h-16 rounded-2xl bg-brand-background text-brand-secondary flex items-center justify-center shrink-0 shadow-inner group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
+                  <Mail className="w-7 h-7" />
                 </div>
                 <div>
-                  <h4 className="font-heading font-semibold text-lg text-brand-dark mb-2">Email Us</h4>
-                  <a href={`mailto:${data.contact.email}`} className="text-brand-muted hover:text-brand-secondary transition-colors">{data.contact.email}</a>
+                  <h4 className="font-heading font-semibold text-xl text-brand-dark mb-3">Email Us</h4>
+                  <a href={`mailto:${data.contact.email}`} className="text-brand-muted text-lg hover:text-brand-secondary transition-colors font-light">{data.contact.email}</a>
                 </div>
               </div>
             </div>
 
-            <div className="mt-12 pt-10 border-t border-gray-100">
-              <h4 className="font-heading font-semibold text-brand-primary mb-6">Connect With Us</h4>
-              <div className="flex gap-4">
-                <a href={data.contact.facebookUrl} target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-brand-background text-brand-primary flex items-center justify-center hover:bg-brand-secondary hover:text-white transition-all duration-300 shadow-sm">
-                  <Facebook className="w-5 h-5" />
+            <div className="mt-16 pt-12 border-t border-gray-100">
+              <h4 className="font-heading font-bold text-xl text-brand-primary mb-8">Connect With Us</h4>
+              <div className="flex gap-6">
+                <a href={data.contact.facebookUrl} target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full bg-brand-background text-brand-primary flex items-center justify-center hover:bg-brand-secondary hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
+                  <Facebook className="w-6 h-6" />
                 </a>
-                <a href={data.contact.instagramUrl} target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-brand-background text-brand-primary flex items-center justify-center hover:bg-brand-secondary hover:text-white transition-all duration-300 shadow-sm">
-                  <Instagram className="w-5 h-5" />
+                <a href={data.contact.instagramUrl} target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full bg-brand-background text-brand-primary flex items-center justify-center hover:bg-brand-secondary hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
+                  <Instagram className="w-6 h-6" />
                 </a>
-                <a href={data.contact.whatsappUrl} target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-brand-background text-brand-primary flex items-center justify-center hover:bg-brand-secondary hover:text-white transition-all duration-300 shadow-sm">
-                  <MessageCircle className="w-5 h-5" />
+                <a href={data.contact.whatsappUrl} target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full bg-brand-background text-brand-primary flex items-center justify-center hover:bg-brand-secondary hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
+                  <MessageCircle className="w-6 h-6" />
                 </a>
               </div>
             </div>
@@ -103,10 +103,10 @@ export default function Contact() {
 
           {/* Contact Form */}
           <motion.div 
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-white p-10 md:p-12 rounded-[2rem] shadow-xl border border-gray-100"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="bg-white p-12 md:p-16 rounded-[2.5rem] shadow-2xl border border-gray-100"
           >
             <AnimatePresence mode="wait">
               {submitted ? (
@@ -181,7 +181,7 @@ export default function Contact() {
                     ></textarea>
                   </div>
                   
-                  <button type="submit" className="w-full bg-brand-primary hover:bg-brand-primary/90 text-white font-semibold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl mt-4">
+                  <button type="submit" className="w-full bg-brand-primary hover:bg-brand-secondary text-white font-semibold py-5 rounded-xl transition-all duration-300 shadow-xl mt-6 text-lg">
                     Send Message
                   </button>
                 </motion.form>

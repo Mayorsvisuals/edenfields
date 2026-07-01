@@ -41,37 +41,37 @@ export default function WhyChooseUs() {
     <div className="font-sans text-brand-dark bg-brand-background pt-32 pb-24 min-h-screen">
       <div className="container mx-auto px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-4xl mx-auto mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            <span className="text-brand-secondary font-semibold tracking-widest uppercase mb-4 block">The EdenFields Advantage</span>
-            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-brand-primary mb-6">
+            <span className="text-brand-secondary font-semibold tracking-widest uppercase mb-6 block">The EdenFields Advantage</span>
+            <h1 className="font-heading font-bold text-5xl md:text-6xl lg:text-7xl text-brand-primary mb-8 leading-tight">
               Why Choose Us
             </h1>
-            <p className="text-brand-muted text-lg font-light">
+            <p className="text-brand-muted text-xl font-light leading-relaxed">
               We are redefining the real estate experience in Nigeria through unwavering integrity, transparency, and a commitment to securing your legacy.
             </p>
           </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-32">
           {features.map((feature, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white p-10 rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="bg-white p-12 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100"
             >
-              <div className="w-14 h-14 rounded-2xl bg-brand-primary/5 text-brand-primary flex items-center justify-center mb-8">
-                <feature.icon className="w-7 h-7" />
+              <div className="w-16 h-16 rounded-2xl bg-brand-background text-brand-secondary flex items-center justify-center mb-8 shadow-inner">
+                <feature.icon className="w-8 h-8" />
               </div>
-              <h3 className="font-heading font-bold text-xl text-brand-dark mb-4">{feature.title}</h3>
-              <p className="text-brand-muted leading-relaxed">{feature.desc}</p>
+              <h3 className="font-heading font-bold text-2xl text-brand-dark mb-4">{feature.title}</h3>
+              <p className="text-brand-muted text-lg leading-relaxed font-light">{feature.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -80,19 +80,21 @@ export default function WhyChooseUs() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-brand-primary text-white rounded-3xl p-12 md:p-16 text-center max-w-4xl mx-auto shadow-2xl relative overflow-hidden"
+          transition={{ duration: 0.8 }}
+          className="bg-brand-primary text-white rounded-[3rem] p-16 md:p-24 text-center max-w-5xl mx-auto shadow-2xl relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-6 relative z-10">Ready to secure your future?</h2>
-          <p className="text-white/80 text-lg mb-10 relative z-10 max-w-2xl mx-auto">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-secondary/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-secondary/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+          <span className="text-brand-secondary font-semibold tracking-widest uppercase mb-6 block relative z-10">Take The Next Step</span>
+          <h2 className="font-heading font-bold text-4xl md:text-5xl mb-8 relative z-10">Ready to secure your future?</h2>
+          <p className="text-white/80 text-xl mb-14 relative z-10 max-w-2xl mx-auto font-light leading-relaxed">
             Experience the peace of mind that comes from investing with a company that prioritizes your success.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 relative z-10">
-            <Link to="/properties" className="bg-white text-brand-primary hover:bg-brand-background font-semibold py-4 px-10 rounded-xl transition-all duration-300 shadow-lg">
+          <div className="flex flex-col sm:flex-row justify-center gap-6 relative z-10">
+            <Link to="/properties" className="bg-brand-secondary hover:bg-white hover:text-brand-primary text-white font-semibold py-5 px-12 rounded-xl transition-all duration-300 shadow-xl border border-transparent hover:border-white">
               View Properties
             </Link>
-            <Link to="/contact" className="bg-transparent border border-white/30 text-white hover:bg-white/10 font-semibold py-4 px-10 rounded-xl transition-all duration-300">
+            <Link to="/contact" className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-semibold py-5 px-12 rounded-xl transition-all duration-300">
               Contact an Advisor
             </Link>
           </div>

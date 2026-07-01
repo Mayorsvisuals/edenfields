@@ -33,63 +33,65 @@ export default function Blog() {
     <div className="font-sans text-brand-dark bg-brand-background pt-32 pb-24 min-h-screen">
       <div className="container mx-auto px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            <span className="text-brand-secondary font-semibold tracking-widest uppercase mb-4 block">Our Blog</span>
-            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-brand-primary mb-6">
+            <span className="text-brand-secondary font-semibold tracking-widest uppercase mb-6 block">Our Blog</span>
+            <h1 className="font-heading font-bold text-5xl md:text-6xl lg:text-7xl text-brand-primary mb-8 leading-tight">
               Insights & Articles
             </h1>
-            <p className="text-brand-muted text-lg font-light">
+            <p className="text-brand-muted text-xl font-light leading-relaxed">
               Expert advice, market trends, and investment guides to help you build your legacy.
             </p>
           </motion.div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-16">
+        <div className="flex flex-wrap justify-center gap-4 mb-20">
           {categories.map((cat, idx) => (
             <button 
               key={idx}
-              className={`px-6 py-2 rounded-full font-medium transition-colors ${idx === 0 ? 'bg-brand-primary text-white' : 'bg-white text-brand-dark border border-gray-200 hover:border-brand-primary'}`}
+              className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 text-sm md:text-base ${idx === 0 ? 'bg-brand-primary text-white shadow-lg' : 'bg-white text-brand-muted border border-gray-200 hover:border-brand-secondary hover:text-brand-primary'}`}
             >
               {cat}
             </button>
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {posts.map((post, idx) => (
             <motion.div 
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 group flex flex-col"
             >
-              <div className="aspect-video overflow-hidden relative">
-                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full text-xs font-bold text-brand-primary uppercase tracking-wider">
+              <div className="aspect-[4/3] overflow-hidden relative">
+                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" />
+                <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md px-5 py-2 rounded-full text-xs font-bold text-brand-primary uppercase tracking-widest shadow-md">
                   {post.category}
                 </div>
               </div>
-              <div className="p-8">
-                <div className="flex items-center text-sm text-brand-muted mb-4 font-medium">
+              <div className="p-10 flex flex-col flex-grow">
+                <div className="flex items-center text-sm text-brand-secondary font-bold uppercase tracking-widest mb-6">
                   <Calendar className="w-4 h-4 mr-2" />
                   {post.date}
                 </div>
-                <h3 className="font-heading font-bold text-xl text-brand-primary mb-4 line-clamp-2">
+                <h3 className="font-heading font-bold text-2xl text-brand-primary mb-6 leading-tight line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-brand-muted mb-6 line-clamp-3">
+                <p className="text-brand-muted mb-8 line-clamp-3 text-lg font-light leading-relaxed">
                   {post.excerpt}
                 </p>
-                <a href="#" className="inline-flex items-center text-brand-secondary font-semibold hover:text-brand-primary transition-colors">
-                  Read Article <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
+                <div className="mt-auto pt-6 border-t border-gray-100">
+                  <a href="#" className="inline-flex items-center text-brand-primary font-semibold hover:text-brand-secondary transition-colors group/link">
+                    Read Article <ArrowRight className="w-5 h-5 ml-2 transform group-hover/link:translate-x-1 transition-transform" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}

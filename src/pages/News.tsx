@@ -40,60 +40,60 @@ export default function News() {
     <div className="font-sans text-brand-dark bg-brand-background pt-32 pb-24 min-h-screen">
       <div className="container mx-auto px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            <span className="text-brand-secondary font-semibold tracking-widest uppercase mb-4 block">Stay Updated</span>
-            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-brand-primary mb-6">
+            <span className="text-brand-secondary font-semibold tracking-widest uppercase mb-6 block">Stay Updated</span>
+            <h1 className="font-heading font-bold text-5xl md:text-6xl lg:text-7xl text-brand-primary mb-8 leading-tight">
               Company News
             </h1>
-            <p className="text-brand-muted text-lg font-light">
+            <p className="text-brand-muted text-xl font-light leading-relaxed">
               Latest announcements, property releases, and event updates from EdenFields Realty.
             </p>
           </motion.div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-16">
+        <div className="flex flex-wrap justify-center gap-4 mb-20">
           {categories.map((cat, idx) => (
             <button 
               key={idx}
-              className={`px-6 py-2 rounded-full font-medium transition-colors ${idx === 0 ? 'bg-brand-primary text-white' : 'bg-white text-brand-dark border border-gray-200 hover:border-brand-primary'}`}
+              className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 text-sm md:text-base ${idx === 0 ? 'bg-brand-primary text-white shadow-lg' : 'bg-white text-brand-muted border border-gray-200 hover:border-brand-secondary hover:text-brand-primary'}`}
             >
               {cat}
             </button>
           ))}
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div className="max-w-5xl mx-auto space-y-10">
           {newsItems.map((item, idx) => (
             <motion.div 
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white p-8 md:p-10 rounded-3xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 flex flex-col md:flex-row gap-8 items-start"
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="bg-white p-10 md:p-14 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col md:flex-row gap-10 items-start"
             >
-              <div className="shrink-0 w-16 h-16 rounded-2xl bg-brand-primary/5 text-brand-primary flex items-center justify-center">
-                <item.icon className="w-8 h-8" />
+              <div className="shrink-0 w-20 h-20 rounded-[2rem] bg-brand-background text-brand-secondary flex items-center justify-center shadow-inner border border-brand-secondary/5">
+                <item.icon className="w-10 h-10" />
               </div>
               <div className="flex-1">
-                <div className="flex flex-wrap items-center gap-4 mb-3">
-                  <span className="bg-brand-secondary/10 text-brand-secondary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                <div className="flex flex-wrap items-center gap-6 mb-6">
+                  <span className="bg-brand-secondary/10 text-brand-secondary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
                     {item.category}
                   </span>
-                  <div className="flex items-center text-sm text-brand-muted font-medium">
+                  <div className="flex items-center text-sm text-brand-muted font-semibold uppercase tracking-widest">
                     <Calendar className="w-4 h-4 mr-2" />
                     {item.date}
                   </div>
                 </div>
-                <h3 className="font-heading font-bold text-2xl text-brand-primary mb-4">
+                <h3 className="font-heading font-bold text-3xl md:text-4xl text-brand-primary mb-6 leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-brand-muted leading-relaxed">
+                <p className="text-brand-muted text-lg font-light leading-relaxed">
                   {item.content}
                 </p>
               </div>
