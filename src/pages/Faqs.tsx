@@ -29,50 +29,61 @@ export default function Faqs() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
-          >
-            {data.faqs.map((faq: any, index: number) => {
-              const isActive = activeId === faq.id;
-              return (
-                <div 
-                  key={faq.id} 
-                  className={`bg-white rounded-[1.5rem] overflow-hidden shadow-sm border transition-all duration-300 ${isActive ? 'border-brand-secondary/30 shadow-lg' : 'border-gray-100 hover:border-brand-primary/20 hover:shadow-md'}`}
-                >
-                  <button 
-                    onClick={() => setActiveId(isActive ? null : faq.id)}
-                    className="w-full text-left px-8 py-8 flex justify-between items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-inset"
+          {data.faqs.length === 0 ? (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="bg-white p-16 rounded-[2.5rem] border border-gray-100 shadow-sm text-center"
+            >
+              <h3 className="font-heading font-bold text-2xl text-brand-primary mb-4">Knowledge Base Updating</h3>
+              <p className="text-brand-muted text-lg font-light mb-8">We are currently updating our frequently asked questions. Please contact our support team for immediate assistance.</p>
+            </motion.div>
+          ) : (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-6"
+            >
+              {data.faqs.map((faq: any, index: number) => {
+                const isActive = activeId === faq.id;
+                return (
+                  <div 
+                    key={faq.id} 
+                    className={`bg-white rounded-[1.5rem] overflow-hidden shadow-sm border transition-all duration-300 ${isActive ? 'border-brand-secondary/30 shadow-lg' : 'border-gray-100 hover:border-brand-primary/20 hover:shadow-md'}`}
                   >
-                    <span className={`font-heading font-semibold text-xl md:text-2xl pr-8 transition-colors ${isActive ? 'text-brand-primary' : 'text-brand-dark'}`}>
-                      {faq.question}
-                    </span>
-                    <div className={`shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 shadow-inner ${isActive ? 'bg-brand-secondary text-white rotate-180' : 'bg-brand-background text-brand-primary'}`}>
-                      <ChevronDown className="w-6 h-6" />
-                    </div>
-                  </button>
-                  
-                  <AnimatePresence>
-                    {isActive && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <div className="px-8 pb-10 pt-2 text-brand-muted leading-relaxed text-lg md:text-xl font-light border-t border-gray-50 mx-8">
-                          {faq.answer}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </motion.div>
+                    <button 
+                      onClick={() => setActiveId(isActive ? null : faq.id)}
+                      className="w-full text-left px-8 py-8 flex justify-between items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-inset"
+                    >
+                      <span className={`font-heading font-semibold text-xl md:text-2xl pr-8 transition-colors ${isActive ? 'text-brand-primary' : 'text-brand-dark'}`}>
+                        {faq.question}
+                      </span>
+                      <div className={`shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 shadow-inner ${isActive ? 'bg-brand-secondary text-white rotate-180' : 'bg-brand-background text-brand-primary'}`}>
+                        <ChevronDown className="w-6 h-6" />
+                      </div>
+                    </button>
+                    
+                    <AnimatePresence>
+                      {isActive && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.4, ease: "easeInOut" }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-8 pb-10 pt-2 text-brand-muted leading-relaxed text-lg md:text-xl font-light border-t border-gray-50 mx-8">
+                            {faq.answer}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+            </motion.div>
+          )}
 
           <motion.div 
             initial={{ opacity: 0 }}

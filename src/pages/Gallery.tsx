@@ -55,34 +55,50 @@ export default function Gallery() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           <AnimatePresence mode="popLayout">
-            {filteredGallery.map((img: any, idx: number) => (
+            {filteredGallery.length === 0 ? (
               <motion.div 
-                layout
-                key={img.id || idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5 }}
-                className="relative group overflow-hidden rounded-[2rem] aspect-[4/3] cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500"
-                onClick={() => setLightboxImg(img.url)}
+                key="empty"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="col-span-full bg-white p-16 rounded-[2.5rem] border border-gray-100 shadow-sm text-center max-w-3xl mx-auto mt-4"
               >
-                <img 
-                  src={img.url} 
-                  alt={img.caption} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/95 via-brand-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 flex flex-col justify-end p-8 md:p-10">
-                  <div className="transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                    <span className="text-white font-bold text-2xl block mb-2 font-heading">{img.caption}</span>
-                    <span className="text-brand-secondary text-sm font-bold uppercase tracking-widest block mb-6">{img.category}</span>
-                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
-                      <Maximize2 className="w-6 h-6 text-white" />
+                <div className="w-20 h-20 rounded-[2rem] bg-brand-background text-brand-secondary flex items-center justify-center mx-auto mb-8 shadow-inner">
+                  <Maximize2 className="w-10 h-10" />
+                </div>
+                <h3 className="font-heading font-bold text-3xl text-brand-primary mb-4">No Media Found</h3>
+                <p className="text-brand-muted text-xl font-light mb-8 leading-relaxed">There are currently no images available in this category. Please check back later or explore other categories.</p>
+              </motion.div>
+            ) : (
+              filteredGallery.map((img: any, idx: number) => (
+                <motion.div 
+                  layout
+                  key={img.id || idx}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.5 }}
+                  className="relative group overflow-hidden rounded-[2rem] aspect-[4/3] cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500"
+                  onClick={() => setLightboxImg(img.url)}
+                >
+                  <img 
+                    src={img.url} 
+                    alt={img.caption} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/95 via-brand-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 flex flex-col justify-end p-8 md:p-10">
+                    <div className="transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                      <span className="text-white font-bold text-2xl block mb-2 font-heading">{img.caption}</span>
+                      <span className="text-brand-secondary text-sm font-bold uppercase tracking-widest block mb-6">{img.category}</span>
+                      <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
+                        <Maximize2 className="w-6 h-6 text-white" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))
+            )}
           </AnimatePresence>
         </div>
       </div>

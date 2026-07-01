@@ -63,18 +63,18 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="max-w-2xl pt-20"
           >
-            <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
-              Own Verified Land in Ibadan with Confidence
+            <h1 className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl text-white leading-tight mb-8">
+              Secure Your Legacy in Nigeria's Growth Corridors
             </h1>
-            <p className="font-body text-lg sm:text-xl text-brand-background/90 mb-10 leading-relaxed">
-              Invest in verified land with flexible payment plans, strategic locations, and trusted documentation.
+            <p className="font-body text-xl sm:text-2xl text-brand-background/90 mb-12 font-light leading-relaxed">
+              We provide exclusive access to verified, high-yield land investments with uncompromising legal transparency and structured acquisition plans.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/properties" className="bg-brand-secondary hover:bg-brand-secondary/90 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-brand-secondary/30">
-                View Properties
+            <div className="flex flex-wrap gap-6">
+              <Link to="/properties" className="bg-brand-secondary hover:bg-white hover:text-brand-primary text-white font-semibold py-5 px-10 rounded-xl transition-all duration-300 shadow-xl border border-transparent">
+                Explore Portfolio
               </Link>
-              <a href={data.contact.whatsappUrl} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:-translate-y-1">
-                Chat on WhatsApp
+              <a href={data.contact.whatsappUrl} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold py-5 px-10 rounded-xl transition-all duration-300">
+                Consult an Advisor
               </a>
             </div>
           </motion.div>

@@ -24,7 +24,7 @@ export default function Chatbot() {
         setMessages([
           {
             sender: 'bot',
-            text: 'Welcome to EdenFields Realty! 👋 How can we assist you with your real estate investment today?',
+            text: 'Welcome to the digital headquarters of EdenFields Realty. I am your virtual assistant. How may I direct your inquiry today?',
             options: initialOptions
           }
         ]);
@@ -51,30 +51,30 @@ export default function Chatbot() {
       if (configItem) {
         botResponse = configItem.response;
         nextOptions = [
-            opt.action === 'escalate' ? null : { label: 'Contact Consultant', action: 'escalate' },
-            { label: 'Main Menu', action: 'main' }
+            opt.action === 'escalate' ? null : { label: 'Connect With Advisor', action: 'escalate' },
+            { label: 'Return to Directory', action: 'main' }
         ].filter(Boolean);
       } else if (opt.action === 'escalate') {
-        botResponse = 'Excellent! A professional consultant is ready to assist you. Please click the button below to connect instantly on WhatsApp.';
-        nextOptions = [{ label: 'Main Menu', action: 'main' }];
+        botResponse = 'Certainly. A dedicated real estate advisor is available to assist you. Please click the button below to connect securely via WhatsApp.';
+        nextOptions = [{ label: 'Return to Directory', action: 'main' }];
       } else if (opt.action === 'main') {
-        botResponse = 'How else may I assist you today?';
+        botResponse = 'How else may I direct your inquiry?';
         nextOptions = initialOptions;
       } else if (opt.action === 'lands') {
-          botResponse = 'We have premium, verified properties in fast-developing areas. All properties are verified with clear documentation.';
-          nextOptions = [{ label: 'Contact Consultant', action: 'escalate' }, { label: 'Main Menu', action: 'main' }];
+          botResponse = 'We offer an exclusive portfolio of verified, premium properties in high-growth corridors. Each property is thoroughly vetted with transparent documentation.';
+          nextOptions = [{ label: 'Connect With Advisor', action: 'escalate' }, { label: 'Return to Directory', action: 'main' }];
       } else if (opt.action === 'pricing') {
-          botResponse = 'We offer flexible payment plans tailored for investors, allowing you to spread payments over up to 12 months.';
-          nextOptions = [{ label: 'Contact Consultant', action: 'escalate' }, { label: 'Main Menu', action: 'main' }];
+          botResponse = 'We provide structured payment frameworks designed for serious investors, allowing you to secure your asset with flexible milestones over 12 months.';
+          nextOptions = [{ label: 'Connect With Advisor', action: 'escalate' }, { label: 'Return to Directory', action: 'main' }];
       } else if (opt.action === 'inspection') {
-          botResponse = 'We offer free physical and virtual site inspections. Please connect with our consultant to book your slot.';
-          nextOptions = [{ label: 'Contact Consultant', action: 'escalate' }, { label: 'Main Menu', action: 'main' }];
+          botResponse = 'We facilitate both physical site tours and comprehensive virtual inspections. An advisor will be happy to schedule a private viewing.';
+          nextOptions = [{ label: 'Connect With Advisor', action: 'escalate' }, { label: 'Return to Directory', action: 'main' }];
       } else if (opt.action === 'docs') {
-          botResponse = 'We provide secure titles including Registered Surveys, C of O, and Government Consent depending on the estate. All our lands are free from Omo-Onile issues.';
-          nextOptions = [{ label: 'Contact Consultant', action: 'escalate' }, { label: 'Main Menu', action: 'main' }];
+          botResponse = 'Our legal framework ensures absolute security. We provide Registered Surveys, Certificates of Occupancy, and Governor\'s Consent. Your investment is protected.';
+          nextOptions = [{ label: 'Connect With Advisor', action: 'escalate' }, { label: 'Return to Directory', action: 'main' }];
       } else if (opt.action === 'location') {
-          botResponse = `Our office is located at: ${data?.contact?.address || 'Ibadan, Oyo State'}.`;
-          nextOptions = [{ label: 'Contact Consultant', action: 'escalate' }, { label: 'Main Menu', action: 'main' }];
+          botResponse = `Our corporate headquarters is located at: ${data?.contact?.address || 'Ibadan, Oyo State'}.`;
+          nextOptions = [{ label: 'Connect With Advisor', action: 'escalate' }, { label: 'Return to Directory', action: 'main' }];
       }
 
       setMessages(prev => [...prev, { sender: 'bot', text: botResponse, options: nextOptions }]);

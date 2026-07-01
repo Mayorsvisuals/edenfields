@@ -60,42 +60,56 @@ export default function Blog() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {posts.map((post, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 group flex flex-col"
-            >
-              <div className="aspect-[4/3] overflow-hidden relative">
-                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" />
-                <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md px-5 py-2 rounded-full text-xs font-bold text-brand-primary uppercase tracking-widest shadow-md">
-                  {post.category}
+        {posts.length === 0 ? (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="bg-white p-16 rounded-[2.5rem] border border-gray-100 shadow-sm text-center max-w-3xl mx-auto mt-12"
+          >
+            <div className="w-20 h-20 rounded-[2rem] bg-brand-background text-brand-secondary flex items-center justify-center mx-auto mb-8 shadow-inner">
+              <Calendar className="w-10 h-10" />
+            </div>
+            <h3 className="font-heading font-bold text-3xl text-brand-primary mb-4">No Articles Found</h3>
+            <p className="text-brand-muted text-xl font-light mb-8 leading-relaxed">We are currently preparing new insights and market analysis. Please check back shortly for our latest publications.</p>
+          </motion.div>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {posts.map((post, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 group flex flex-col"
+              >
+                <div className="aspect-[4/3] overflow-hidden relative">
+                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" />
+                  <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md px-5 py-2 rounded-full text-xs font-bold text-brand-primary uppercase tracking-widest shadow-md">
+                    {post.category}
+                  </div>
                 </div>
-              </div>
-              <div className="p-10 flex flex-col flex-grow">
-                <div className="flex items-center text-sm text-brand-secondary font-bold uppercase tracking-widest mb-6">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  {post.date}
+                <div className="p-10 flex flex-col flex-grow">
+                  <div className="flex items-center text-sm text-brand-secondary font-bold uppercase tracking-widest mb-6">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    {post.date}
+                  </div>
+                  <h3 className="font-heading font-bold text-2xl text-brand-primary mb-6 leading-tight line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-brand-muted mb-8 line-clamp-3 text-lg font-light leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                  <div className="mt-auto pt-6 border-t border-gray-100">
+                    <a href="#" className="inline-flex items-center text-brand-primary font-semibold hover:text-brand-secondary transition-colors group/link">
+                      Read Article <ArrowRight className="w-5 h-5 ml-2 transform group-hover/link:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
                 </div>
-                <h3 className="font-heading font-bold text-2xl text-brand-primary mb-6 leading-tight line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="text-brand-muted mb-8 line-clamp-3 text-lg font-light leading-relaxed">
-                  {post.excerpt}
-                </p>
-                <div className="mt-auto pt-6 border-t border-gray-100">
-                  <a href="#" className="inline-flex items-center text-brand-primary font-semibold hover:text-brand-secondary transition-colors group/link">
-                    Read Article <ArrowRight className="w-5 h-5 ml-2 transform group-hover/link:translate-x-1 transition-transform" />
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </div>
+        )}
 
       </div>
     </div>
