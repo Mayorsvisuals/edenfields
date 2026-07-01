@@ -240,6 +240,9 @@ async function startServer() {
     res.json({ success: true });
   });
 
+  // Serve uploads directory
+  app.use('/uploads', express.static(UPLOADS_DIR));
+
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({

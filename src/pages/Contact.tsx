@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useSiteData } from '../context/DataContext';
 
 export default function Contact() {
