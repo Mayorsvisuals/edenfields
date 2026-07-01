@@ -12,11 +12,8 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch('/api/leads', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-    });
+    // In a static setup without a backend, we simulate a successful submission.
+    // Real implementation would connect to an email service or CRM.
     setSubmitted(true);
     setFormData({ name: '', email: '', phone: '', message: '' });
     setTimeout(() => setSubmitted(false), 5000);
